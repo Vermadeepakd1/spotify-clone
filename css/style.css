@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Anton&family=Caveat:wght@400..700&family=Comfortaa:wght@300..700&family=Fredoka:wght@300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --a : 0;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", serif;
+    /* box-sizing: border-box; */
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.left{
+    width: 25vw;
+    height: 100vh;
+    padding: 10px;
+    /* background-color: black; */
+}
+.right{
+    width: 75vw;
+    height: 100vh;
+}
+.home{
+    padding: 10px;
+}
+
+.home ul li{
+    display: flex;
+    list-style: none;
+    width: 14px;
+    height: 14px;
+    gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    width: 14px;
+    padding-top: 14px;
+    padding: 23px 14px;
+    align-items: center;
+    font-size: 13px;
+    
+}
+.heading img{
+    width: 30px;
+    height: 30px;
+}
+
+.library{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    max-height: 75vh;
+    padding: 10px;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.footer{
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 10px 0px;
+    font-size: 10px;
+    gap: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.footer a{
+    text-decoration: none;
+    color: gray;
+    margin-top: auto;
+}
+
+.right{
+    margin: 16px 0px;
+    position: relative;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgb(25, 25, 25,1);
+    border-radius: 10px;
+}
+.header > *{
+    color: white;
+    padding: 20px;
+}
+.spotifyPlaylists{
+    padding: 16px;
+}
+.spotifyPlaylists h1{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-y: auto;
+    max-height: 70vh;
+
+}
+.card{
+    width: 200px;
+    height: 250px;
+    border-radius: 8px;
+    background: #252525;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.card:hover{
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    background-color: rgb(24, 24, 24);
+    --a: 1;
+}
+
+.card > *{
+    padding-top: 10px;
+}
+.card img{
+    width: 95%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.play {
+    position: absolute;
+    bottom: 88px;
+    right: 10px;
+    background: #1fdf64;
+    width: 50px;
+    height: 37px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensures play button is above other elements */
+    padding: 8px 0px;
+    opacity: var(--a);
+    transition: all 0.3s ease-out;
+}
+.play svg {
+    width: 30px;
+    height: 30px;
+}
+.buttons > *{
+    margin: 0px 10px;
+}
+.signupbtn{
+    font-weight: bold;
+    background-color: rgb(34, 34, 34);
+    color: rgb(91, 85, 85);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.signupbtn:hover{
+    color: white;
+    font-size: 17px;
+}
+.loginbtn{
+    background-color: white;
+    color: black;
+    /* font-weight: bold; */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.loginbtn:hover{
+    font-size: 17px;
+    padding: 10px 23px;
+    font-weight: bold;
+}
+
+.playbar{
+    position: fixed;
+    bottom: 10px;
+    height: 30px;
+    width: 70%;
+    background-color: rgb(232, 232, 232,1);
+    padding: 18px;
+    border-radius: 10px;
+    filter: invert(1);
+}
+.songbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.songlist{
+    height: 100%;
+    overflow-y: auto;
+}
+.songlist ul{
+    padding: 10px 0px;
+    padding-bottom: 40px;
+    overflow-y: scroll;
+}
+.songlist ul li{
+    list-style-type: decimal;
+    padding: 10px 0px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0px;
+}
+.songlist .info{
+    width: 100%;
+    font-size: 12px;
+}
+.info div{
+    word-break: break-all; 
+}
+
+.seekbar{
+    width: 96%;
+    min-height: 3px;
+    max-height: 5px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    margin: 6px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    bottom: 4px;
+    left: 0%;
+    transition: left 0.5s ease-out;
+}
+
+.songbuttons img{
+    cursor: pointer;
+}
+.songinfo{
+    color: black;
+    font-size: 12px;
+    width:150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.songtime{
+    color: black;
+    font-size: 12px;
+    width: 80px;
+    
+}
+.abovebar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+} 
+.hamburger{
+    display: none;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+    color: black;
+    fill: black;
+}
+
+.hamburger-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.close{
+    display: none;
+}   
+
+.songtimeandvolume{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 67px;
+    gap:60px;
+}
+
+.volume{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+}
+.range{
+    cursor: pointer;
+}
+
+.volume:hover::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 950px ) {
+    .left{
+        position: fixed;
+        top: 0;
+        left: -110%;
+        transition: all 0.3s ease-out;
+        z-index: 1;
+        width: min(373px, 100vw);
+        height: 100%;
+        background-color: black;
+        padding: 0;
+
+    }
+    .right{
+        width: 100vw;
+    }
+    .playbar{
+        width: 90%;
+        height: auto;
+    }
+    .home{
+        padding: 0px;
+    }
+    .library{
+        padding: 0px;
+    }
+    .cardContainer{
+        padding: 0px;
+    }
+    .hamburger{
+        display: block;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    .right{
+        margin: 0;
+    }
+
+    .close{
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        cursor: pointer;
+    }
+
+    .card{
+        width: 40vw; 
+        height: auto;
+
+    } 
+    .card img{
+        width: 95%;
+        height: auto;
+    }
+    .cardContainer{
+        justify-content: center;
+        margin: 0;
+        max-height: 52vh;
+    }
+    .abovebar{
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+    .songinfo{
+        width: 100%;
+        text-align: center;
+    }
+    .songbuttons{
+        gap: 10px;
+    }
+    .songtimeandvolume{
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .buttons{
+        display: flex;
+    }
+}
+
+@media (max-width: 700px) {
+    .card{
+        width: 35vw;
+    }
+}
+@media (max-width: 500px) {
+    .card{
+        width: 100%;
+    }
+    .card img{
+        width: 95%;
+        height: auto;
+    }
+
+    .header > *{
+        padding: 2px;
+    }
+    .buttons >*{
+        margin:0 6px;
+    }
+
+    .cardContainer{
+        width: auto;
+        max-height: unset;
+        overflow-y: unset;
+        padding-bottom: 164px;
+    }
+}
+
