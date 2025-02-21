@@ -6,7 +6,7 @@ let currentfolder = "songs/myplaylist";
 async function getSongs(folder) {
     try {
         currentfolder = folder;
-        let a = await fetch(`http://127.0.0.1:5500/spotify-clone/${currentfolder}/`);
+        let a = await fetch(`${currentfolder}/`);
         let response = await a.text();
 
         // Create a virtual DOM to parse the response
