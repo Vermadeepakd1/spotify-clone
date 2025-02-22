@@ -6,7 +6,7 @@ let currentfolder = "songs/myplaylist";
 async function getSongs(folder) {
     try {
         currentfolder = folder;
-        let a = await fetch(`tree/main/${currentfolder}/`);
+        let a = await fetch(`http://127.0.0.1:5500/spotify-clone/${currentfolder}/`);
         let response = await a.text();
 
         // Create a virtual DOM to parse the response
@@ -23,7 +23,7 @@ async function getSongs(folder) {
 
             // Ensure href ends with '.mp3' and add full URL
             if (href && href.endsWith(".mp3")) {
-                let fullUrl = new URL(href, `tree/main/${currentfolder}/`).href;
+                let fullUrl = new URL(href, `http://127.0.0.1:5500/spotify-clone/${currentfolder}/`).href;
                 songs.push(fullUrl.split(`/${currentfolder}/`)[1]);
             }
         }
@@ -66,7 +66,7 @@ async function getSongs(folder) {
 const playmusic = (songname, pause = false) => {
     // let audio = new Audio("/spotify-clone/songs/" + songname);
 
-    currentSong.src = `tree/main/${currentfolder}/` + songname;
+    currentSong.src = `/spotify-clone/${currentfolder}/` + songname;
     if (!pause) {
         currentSong.play();
         play.src = "images/pause.svg";
