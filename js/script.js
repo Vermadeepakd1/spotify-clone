@@ -23,7 +23,7 @@ async function getSongs(folder) {
 
             // Ensure href ends with '.mp3' and add full URL
             if (href && href.endsWith(".mp3")) {
-                let fullUrl = new URL(href, `http://127.0.0.1:5500/spotify-clone/${currentfolder}/`).href;
+                let fullUrl = new URL(href, `${currentfolder}/`).href;
                 songs.push(fullUrl.split(`/${currentfolder}/`)[1]);
             }
         }
